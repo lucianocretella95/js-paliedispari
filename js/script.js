@@ -1,23 +1,32 @@
 let bet = prompt("scommetti se il risultato sarà pari o dispari");
 let numeroutente = parseInt(prompt("inserisci un numero da 1 a 6"));
-numeroutente <= 6;
-let com = random();
-let somma = com + numeroutente;
-let pari = somma % 2 == 0;
-let dispari = somma % 2 == 1;
-console.log(numeroutente);
+if (numeroutente <= 6) {
+  alert("allora si gioca");
+  let com = random();
+  let somma = com + numeroutente;
+  console.log(numeroutente, com, somma);
+
+  //   controlliamo se la somma pari o dispari è uguale alla bet inserita dall'utente
+  if (bet == pariOrDispari(somma)) {
+    alert("vince utente");
+  } else {
+    console.log("vince com");
+  }
+} else {
+  alert("numero non corretto");
+}
+
 function random() {
   let com = Math.floor(Math.random() * 6) + 1;
   console.log(com);
   return com;
 }
 
-if ((bet = "pari")) {
-  console.log("vince user");
-} else if ((bet = "dispari")) {
-  console.log("vince user");
-} else {
-    bet != "pari";
-    bet != "dispari";
-  console.log("vince com");
+function pariOrDispari(numero) {
+  let risultato = "dispari";
+  if (numero % 2 == 0) {
+    risultato = "pari";
+  }
+  console.log(risultato);
+  return risultato
 }
